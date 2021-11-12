@@ -11,7 +11,8 @@ public class GardenShopApp {
             System.out.println("--------------Garden Shop--------------");
             System.out.println("1 - add flower");
             System.out.println("2 - add fertilizer");
-            System.out.println("3 - display all");
+            System.out.println("3 - add workwear");
+            System.out.println("4 - display all");
             System.out.println("0 - stop");
             option = scanner.nextInt();
             scanner.nextLine();
@@ -44,6 +45,19 @@ public class GardenShopApp {
 
                     break;
                 case 3:
+                    System.out.println("Name: ");
+                    name = scanner.nextLine();
+                    System.out.println("Price: ");
+                    price = scanner.nextDouble();
+                    scanner.nextLine();
+                    System.out.println("Size: ");
+                    String size = scanner.nextLine();
+
+                    WorkWear workWear = new WorkWear(name, price, size);
+                    gardenShop.addWorkWear(workWear);
+
+                    break;
+                case 4:
                     gardenShop.displayAll();
                     break;
             }
